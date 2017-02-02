@@ -3,9 +3,10 @@ var {Link, IndexLink} = require('react-router');
 
 var Nav = React.createClass({
     onSearch: function (e) {
-      alert('Not yet wired up!');
+        e.preventDefault();
+        alert('Not yet wired up!');
     },
-    render: function(){
+    render: function () {
         return (
             <div className="top-bar">
                 <div className="top-bar-left">
@@ -22,22 +23,21 @@ var Nav = React.createClass({
                         </li>
                     </ul>
                 </div>
-
                 <div className="top-bar-right">
-                    <form onSubmit={this.onSearch}/>
-                    <ul className="menu">
-                        <li>
-                            <input type="search" placeholder="Search Weather"/>
-                        </li>
-                        <li>
-                            <input type="submit" className="button" value="Get Weather"/>
-                        </li>
-                    </ul>
+                    <form onSubmit={this.onSearch}>
+                        <ul className="menu">
+                            <li>
+                                <input type="search" placeholder="Search weather"/>
+                            </li>
+                            <li>
+                                <input type="submit" className="button" value="Get Weather"/>
+                            </li>
+                        </ul>
+                    </form>
                 </div>
             </div>
         );
     }
-})
+});
 
 module.exports = Nav;
-
